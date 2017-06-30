@@ -1,0 +1,13 @@
+Starting:
+
+:mkdir -folderName
+:npm init
+	{specify settings; if value in (paras) just press enter}
+:npm install --save-dev nodemon
+:npm install express --save
+:npm install --save socket.io
+:npm install body-parser
+:touch server.js  /// this is important so the commant npm run start kicks up the server
+:mkdir api
+:mkdir api/controllers api/models api/routes
+:touch api/controllers/contoller.js api/models/model.js api/routes/routes.js
