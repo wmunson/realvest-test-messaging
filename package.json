@@ -4,7 +4,9 @@
   "description": "realvest proto",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "nodemon server.js",
+    "start" : "node server.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,7 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "mongoose": "^4.11.0",
     "socket.io": "^2.0.3"
