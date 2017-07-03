@@ -14,7 +14,7 @@ var MessageSchema = new Schema({
 		type: Date,
 		default: Date.now
 	},
-	content:{
+	message:{
 		type: String
 	}
 

@@ -2,21 +2,20 @@ var express = require('express');
 var router = express.Router();
 var messanger = require('../controllers/messController');
 
+
+
 router.route('/group/:groupId')
-	.get(function(req,res){
+	.get(function(req,res,groupId){
 		console.log("We are in router message");
-		console.log(messanger.get_messages);
-		
-		res.json(messanger.get_messages);
+		console.log(groupId)
+		messanger.get_messages(req,res,groupId);
 	})
 
 router.route("/post")
 	.post(function(req,res){
 		console.log("We are in router message POST SOME SHIT");
 		// console.log(req);
-		var blah = messanger.post_message(req,res);
-		console.log(blah);
-		res.json(blah);
+		messanger.post_message(req,res);
 	})
 
 module.exports = router;
