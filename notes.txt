@@ -11,3 +11,7 @@ Starting:
 :mkdir api
 :mkdir api/controllers api/models api/routes
 :touch api/controllers/contoller.js api/models/model.js api/routes/routes.js
+
+
+
+7/2: problems between routes and controller: too many overlapping functions.

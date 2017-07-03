@@ -1,10 +1,22 @@
-module.exports = function(app){
-	var messanger = require('../controllers/messController');
-	console.log('routessssssss')
+var express = require('express');
+var router = express.Router();
+var messanger = require('../controllers/messController');
 
-	app.route('/messages/:groupId')
-		.get(messanger.get_messages);
 
-	app.route('message/post')
-		.post(messanger.post_message);
-}
+
+router.route('/group/:groupId')
+	.get(function(req,res,groupId){
+		console.log("We are in router message");
+		console.log(groupId)
+		messanger.get_messages(req,res,groupId);
+	})
+
+router.route("/post")
+	.post(function(req,res){
+		console.log("We are in router message POST SOME SHIT");
+		// console.log(req);
+		messanger.post_message(req,res);
+	})
+
+module.exports = router;
+
