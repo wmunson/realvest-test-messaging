@@ -15,3 +15,7 @@ Starting:
 
 
 7/2: problems between routes and controller: too many overlapping functions.
+
+7/16: AJAX POST works going to socket port (3700), due to CORS auth, but not app port(3000). Look into if it is fine to leave working with everythoin on socket port of ir better to split responsibilities to different ports.
+
+7/16: TODO: load previous messages, sorted by date to browser upon loading.

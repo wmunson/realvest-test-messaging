@@ -50,8 +50,20 @@ window.onload = function() {
         } else {
             var text = field.value;
             var username = document.querySelector('.nameTag')
-            socket.emit('send', { message: text, username: username.dataset.name, group: 1});
+            var data = { message: text, username: username.dataset.name, group: 1}
+            socket.emit('send', data);
 			field.value = "";
+			var postRoute = 'http://127.0.0.1:3700/message/post'
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function(){
+				if(this.readyState == 4 && this.status == 200){
+					console.log('message posted')
+					
+				}
+			};
+			xhttp.open("POST", postRoute, true);
+			xhttp.setRequestHeader('Content-type','application/json');
+			xhttp.send({response:data});
         }
     };
 

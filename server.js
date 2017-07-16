@@ -37,17 +37,18 @@ app.use('/message', messageRoutes)
 
 // Socket.IO setup /////
 var io = require('socket.io').listen(app.listen(socketPort, function(){
-	console.log('listening on *:' + socketPort);
+	console.log('Socket.IO listening on *:' + socketPort);
 
 	})
 );
 
 io.sockets.on('connection', function(socket){
 	console.log('connected socket');
+	io.sockets.emit('message',{'message':'Welcome to Realvest Chat','username':'Admin'})
 	socket.on('send', function(data){
 		console.log(data);
 		var new_message = new Message(data);
-		console.log(new_message);
+		console.log('new mess: ' + new_message);
 		new_message.save(function(err,message){
 			if(err)
 				return new Error('message not saved');
