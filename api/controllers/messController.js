@@ -21,6 +21,6 @@ exports.post_message = function(req, res){
 			res.send(err);
 		// res.json(message)
 		console.log('post no error')
-		return req;
+		return res;
 	});
 };
